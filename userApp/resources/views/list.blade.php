@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('list') }}
+            {{ __('list of certificates') }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -15,7 +15,7 @@
             <table class="table-fixed w-full">
                 <thead>
                     <tr class="bg-gray-100">
-                        <th class="px-2 py-1">ID</th>
+                        <th class="px-2 py-1">certificate ID</th>
                         <!-- <th class="px-4 py-2">Name</th> -->
                         <th class="px-4 py-2">Count</th>
                     </tr>

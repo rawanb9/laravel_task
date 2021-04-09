@@ -4,11 +4,13 @@
             {{ __('Certificates') }}
         </h2>
     </x-slot>
+    <div class="py-5">
     @if(session('success'))
             <div class="alert alert-success">
                 {{session('success')}}
             </div>
      @endif
+     </div>
     <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div>
@@ -22,6 +24,12 @@
     <table class="table-fixed w-full">
     
     <tr>
+    <thead>
+        <tr class="bg-gray-100">
+            <th class="px-2 py-1">Certificate ID</th>
+            <th class="px-4 py-2">Action</th>
+        </tr>
+    </thead>
     <td>
     <form method="POST" >
         @csrf

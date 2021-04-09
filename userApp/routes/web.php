@@ -21,11 +21,11 @@ Auth::routes();
 Route::group(['middleware' => ['admin']], function () {
     Route::post('/Admin', [App\Http\Controllers\CertificateController::class,'addCer']);
     Route::get('/Admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('list',[App\Http\Controllers\UserCertificateController::class,'listCertificates']);
 });
 Route::group(['middleware' => 'auth'], function(){
     Route::get('certificateDelete/{id}', [App\Http\Controllers\UserCertificateController::class,'destroy'])->name('certificateDelete');
     Route::get('userCertificates', [App\Http\Controllers\UserCertificateController::class, 'listCertificates'])->name('Admin');
-    Route::get('list',[App\Http\Controllers\UserCertificateController::class,'listCertificates']);
     Route::get('approval', function () {
         return view('approval');
     } );
